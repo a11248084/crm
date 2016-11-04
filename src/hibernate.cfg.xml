@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<!-- JDBC基本连接参数 -->
+	<session-factory> <!-- 理解为连接池 -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql:///crm3</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">renhai</property>
+		<!-- 配置方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		
+		<!-- 常见其它配置 -->
+		<property name="hibernate.show_sql">true</property> <!-- 控制台上打印SQL -->
+		<property name="hibernate.format_sql">true</property> <!-- 控制台输出时，对SQL语句格式化 -->
+		<!-- 测试环境 create/ create-drop 正式环境 update validate -->
+		<property name="hibernate.hbm2ddl.auto">update</property> <!-- 自动建表 -->
+		
+		<!-- 加载注解映射Class -->
+		<mapping resource="cn/itcast/crm/domain/Customer.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>	
